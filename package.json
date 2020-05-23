@@ -1,0 +1,30 @@
+{
+  "name": "rarebirds-diaspora-investor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kengeo/rarebirds-diaspora-investor.git"
+  },
+  "author": "Kenroy George",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kengeo/rarebirds-diaspora-investor/issues"
+  },
+  "homepage": "https://github.com/kengeo/rarebirds-diaspora-investor#readme",
+  "dependencies": {
+    "@portis/web3": "^2.0.0-beta.55",
+    "next": "^9.3.6",
+    "next-routes": "^1.4.2",
+    "profile-hover": "^1.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "semantic-ui-react": "^0.86.0",
+    "web3": "^1.2.7"
+  }
+}
