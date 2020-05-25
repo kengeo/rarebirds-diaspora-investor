@@ -12,8 +12,6 @@ class ContributeForm extends Component {
       value: "",
       errorMessage: "",
       loading: false,
-      address: "",
-      email: "",
    };
 
    onSubmit = async (event) => {
@@ -28,17 +26,16 @@ class ContributeForm extends Component {
       // console.log(portis);
       // const web3 = new Web3(portis.provider);
 
-      portis.onLogin((walletAddress, email) => {
-         this.setState({ address: walletAddress, email: email });
-      });
+      // portis.onLogin((walletAddress, email) => {
+      //    this.setState({ address: walletAddress, email: email });
+      // });
 
       this.setState({ loading: true, errorMessage: "" });
 
       try {
          const accounts = await web3.eth.getAccounts();
-         console.log(this.state.address);
          await campaign.methods.contribute().send({
-            from: this.state.address,
+            from: accounts[0],
             value: web3.utils.toWei(this.state.value, "ether"),
          });
          // Router.replaceRoute(`/campaigns/${this.props.address}`);

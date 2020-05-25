@@ -28,7 +28,7 @@ class RequestNew extends Component {
 
       const campaign = Campaign(this.props.address);
       const { value, description, recipient } = this.state;
-      const router = useRouter();
+
       try {
          const accounts = await web3.eth.getAccounts();
          await campaign.methods
@@ -40,6 +40,7 @@ class RequestNew extends Component {
             .send({ from: accounts[0] });
 
          //  Router.pushRoute(`/campaigns/${this.props.address}/requests`);
+         const router = useRouter();
          router.push(`/campaigns/${this.props.address}/requests`);
       } catch (err) {
          this.setState({ errorMessage: err.message });

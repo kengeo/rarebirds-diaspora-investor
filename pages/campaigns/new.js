@@ -16,7 +16,7 @@ class CampaignNew extends Component {
 
    onSubmit = async (event) => {
       event.preventDefault();
-      const router = useRouter();
+
       this.setState({ loading: true });
 
       try {
@@ -26,7 +26,8 @@ class CampaignNew extends Component {
             .send({
                from: accounts[0],
             });
-         //  Router.pushRoute("/");
+         // Router.pushRoute("/");
+         const router = useRouter();
          router.push("/");
       } catch (err) {
          this.setState({ errorMessage: err.message });
